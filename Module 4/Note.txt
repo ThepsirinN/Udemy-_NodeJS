@@ -1,0 +1,14 @@
+- node init
+- node command 
+- node run command (not default)
+- node install package_name
+- npm install nodemon --save-dev 
+- we can re-run npm install to get node_module folder again
+- if we run nodemon it will error bcz it not globlal. put it in start command(npm will look local) 
+- nodemon for auto restart
+- Error Type
+    - Syntax Error -> wrong command typing (eg. cons missing t)
+    - Runtime Error -> run but error while excute (eg. error from assignment 1 [ERR_HTTP_HEADERS_SENT]:)
+    - Logical Error -> run and excute but wrong result by logical error
+    - using debuging tools and setting breakpoint
+    - add nodemon to config json

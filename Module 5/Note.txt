@@ -1,0 +1,8 @@
+- npm install --save body-parser
+- app.use(body-parser.urlencoded({ extended: true }))
+- or app.use(express.urlencoded({ extended: true }))
+- router by creat and export as a module (admin and shop js)
+- creat html view and render by using res.sendFile(path.join __dir , ...)
+- dont forget to require path
+- or create some utility to get the path of the file and import (see in util/path.js) it will solving ../
+- (static file) app.use(url,express.static(pathjoin))
