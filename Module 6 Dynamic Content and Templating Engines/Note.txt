@@ -1,0 +1,9 @@
+- create array for storing post data
+- install template engine (EJS PUG Express-handlebars) ***like template in django
+- set view engine to PUG
+- set views to views
+- using pug syntax and file extension
+- res.render --> will call pug and find the template automatically
+- https://html-to-pug.com/
+- block and extends (like django)
+- for active, use path key (path:'/admin/add-product') and check class in main layout ()

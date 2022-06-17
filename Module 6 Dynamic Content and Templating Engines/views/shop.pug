@@ -1,0 +1,14 @@
+extends layout/main-layout.pug
+
+block title_link
+    title #{docTitle}
+    link(rel="stylesheet", href="/css/form.css")
+block content
+    main
+        h1 My Product
+        p List of all product...
+        if prods.length > 0
+            each product in prods
+                p #{ product.title  }
+        else
+            p No Product!

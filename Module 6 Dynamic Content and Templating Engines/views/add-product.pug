@@ -1,0 +1,12 @@
+extends layout/main-layout.pug
+
+block title_link
+    title #{docTitle}
+    link(rel="stylesheet", href="/css/form.css")
+block content
+    main
+            form.product-form(action='./add-product' method='POST')
+                .form-control
+                    input(type='text' name='title')
+                    center
+                        button(type='submit') send data
