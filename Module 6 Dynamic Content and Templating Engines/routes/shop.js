@@ -13,7 +13,8 @@ router.get('/',(req, res, next)=>{
     const products = adminData.products
     /* res.sendFile(path.join(rootDir,'views','shop.html')) */
     res.render('shop',{prods : products, docTitle: 'Shop', path:'/'})
-    res.render('shop',{prods : products, docTitle: 'Shop', path:'/', hasProduct : prods.length > 0})
+    // for handlebars
+    // res.render('shop',{prods : products, docTitle: 'Shop', path:'/', hasProduct : prods.length > 0, activeshop : true, formCSS : true})
 })
 
 module.exports = router
