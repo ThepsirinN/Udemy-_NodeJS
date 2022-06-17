@@ -12,7 +12,9 @@ router.get('/add-product',(req, res, next)=>{
     // res.sendFile(path.join(rootDir,'views','add-product.html'))
     res.render('add-product',{docTitle:"Admin", path:'/admin/add-product'})
     // for handlebars
-    //res.render('add-product',{docTitle:"Admin", path:'/admin/add-product',activeprod : true, formCSS : true})
+    // res.render('add-product',{docTitle:"Admin", path:'/admin/add-product',activeprod : true, formCSS : true})
+    // for ejs
+    // res.render('add-product',{docTitle:"Admin", path:'/admin/add-product'}) 
 })
 
 router.post('/add-product',(req, res, next)=>{

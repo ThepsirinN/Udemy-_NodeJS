@@ -15,6 +15,8 @@ router.get('/',(req, res, next)=>{
     res.render('shop',{prods : products, docTitle: 'Shop', path:'/'})
     // for handlebars
     // res.render('shop',{prods : products, docTitle: 'Shop', path:'/', hasProduct : prods.length > 0, activeshop : true, formCSS : true})
+    // for ejs
+    // res.render('shop',{prods : products, docTitle: 'Shop', path:'/'})
 })
 
 module.exports = router

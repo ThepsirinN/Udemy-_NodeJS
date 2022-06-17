@@ -13,6 +13,11 @@ app.set('view engine','pug')
 // set views folders
 app.set('views','views')    
 
+
+// ejs
+// app.set('view engine','ejs')
+// app.set('views','views')    
+
 const path = require('path')
 
 const adminData = require('./routes/admin')
