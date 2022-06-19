@@ -1,0 +1,17 @@
+{
+  "name": "assignment-4",
+  "version": "1.0.0",
+  "description": "Assignment 4 for module 6",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thepsirin Nawngerndee",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "dependencies": {
+    "ejs": "^3.1.8"
+  }
+}
