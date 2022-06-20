@@ -1,2 +1,6 @@
 - add controllers folder
 - copy req res next function to controllers file and import
+- create model folder
+- static kw call method directly (like java)
+- JSON.parse() -> some JSONstr to JSONobj
+- JSON.stringify() -> some JSONobj to JSONstr 
