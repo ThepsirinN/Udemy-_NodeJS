@@ -1,0 +1,2 @@
+- add controllers folder
+- copy req res next function to controllers file and import
