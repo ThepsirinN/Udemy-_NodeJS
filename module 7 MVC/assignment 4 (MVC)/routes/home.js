@@ -4,17 +4,10 @@ const router = express.Router()
 const path = require('path')
 const rootDir = require('../utils/path')
 
-const postJSON = []
+const userController = require('../controllers/users')
 
-router.get("/",(req, res, next)=>{
-    res.render(path.join(rootDir, 'views', 'home.ejs'),{docTitle : "Home", Css:'css/main.css', active:"home"})
-})
+router.get("/",userController.getHome)
 
-router.post("/", (req,res,next)=>{
-    console.log(req.body.Username)
-    postJSON.push({Username : req.body.Username})
-    res.redirect("/users")
-})
+router.post("/", userController.postHome)
 
 exports.routes = router
-exports.postJS = postJSON
