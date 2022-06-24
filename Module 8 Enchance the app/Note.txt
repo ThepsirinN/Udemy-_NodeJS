@@ -1,8 +1,1 @@
-- add controllers folder
-- copy req res next function to controllers file and import
-- create model folder
-- static kw call method directly (like java)
-- JSON.parse() -> some JSONstr to JSONobj
-- JSON.stringify() -> some JSONobj to JSONstr 
-- **** if we use file, json file in data folder must init []. Unless, It'll show error Unexpected end of JSON input
-    at JSON.parse (<anonymous>) ****
+- we can access post data in file by Model key not form key

@@ -5,9 +5,17 @@ const router = express.Router()
 const rootDir = require("../util/path")
 
 const adminData = require('./admin') */
-const productsController = require('../controllers/products')
+const shopController = require('../controllers/shop')
 
 
-router.get('/',productsController.getProduct)
+router.get('/',shopController.getIndex)
+
+router.get('/products',shopController.getProduct)
+
+router.get('/cart',shopController.getCart)
+
+router.get('/orders',shopController.getOrder)
+
+router.get('/checkout',shopController.getCheckout)
 
 module.exports = router

@@ -16,28 +16,14 @@ const getProductFromFile = (callback) =>{
 }
 
 module.exports = class Product {
-    constructor (title){
+    constructor (title, imgURL, description, price){
         this.title = title
+        this.imgURL = imgURL
+        this.description = description
+        this.price = price 
     }
 
     save(){
-        /* products.push(this) */
-        /* const p = path.join(rootDir, 'data', 'product.json')
-        fs.readFile(p,(err, fileContent)=>{
-            let products = []
-            if(!err){
-                // JSON.parse() -> some JSONstr to JSONobj
-                // combined if exists
-                products = JSON.parse(fileContent)
-            }
-            products.push(this)
-            // JSON.stringify() -> some JSONobj to JSONstr 
-            // write some str to file
-            fs.writeFile(p,JSON.stringify(products),(err)=>{
-                console.log(err)
-            })
-        }) */
-        // products mean [] or JSON.parse(fileContent) in getProductFromFile bcz this function is eq to callback
         getProductFromFile((products)=>{
             products.push(this)
             fs.writeFile(p,JSON.stringify(products),(err)=>{
@@ -48,7 +34,6 @@ module.exports = class Product {
 
     static fetchAll(callback){
         getProductFromFile(callback)
-        //return products
     }
 }
 

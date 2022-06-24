@@ -2,14 +2,16 @@ const express = require('express')
 const router = express.Router()
 /* const path = require('path') */
 
-const productsController = require('../controllers/products')
+const AdminProductsController = require('../controllers/admin')
 
 // array for storing POST data
 /* const products = [] */
 
-router.get('/add-product',productsController.getAddProduct)
+router.get('/add-products',AdminProductsController.getAddProduct)
 
-router.post('/add-product',productsController.postAddProduct)
+router.get('/products',AdminProductsController.getProductList)
+
+router.post('/add-products',AdminProductsController.postAddProduct)
 
 /* module.exports = router */
 exports.routes = router
