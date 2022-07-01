@@ -1,0 +1,33 @@
+<%- include('../layout/includes/head.ejs') %>
+<link rel="stylesheet" href="/css/product.css">
+
+</head>
+<body>
+    <%- include('../layout/includes/navigation.ejs') %>    
+    <main>
+        <form class="product-form" action="./<% if (editting) { %><% } else { %>add-products<% } %>" method="POST">
+            <div class="form-control">
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" value="<% if (editting) { %><%= prod.title %><% } %>">
+            </div>
+            <div class="form-control">
+                <label for="IMGURL">Image URL</label>
+                <input type="text" name="IMGURL" id="IMGURL" value="<% if (editting) { %><%= prod.imgURL %><% } %>">
+            </div>
+            <div class="form-control">
+                <label for="price">Price</label>
+                <input type="number" name="price" id="price" value="<% if (editting) { %><%= prod.price %><% } %>" step="0.01">
+            </div>
+            <div class="form-control">
+                <label for="description">Description</label>
+                <textarea name="description" id="description" rows="4" cols="50"><% if (editting) { %><%= prod.description %><% } %></textarea>
+            </div>
+            <% if (editting) { %>
+            <div class="form-control">
+                <input type="hidden" name="id" id="id" value="<%= prod.id %>">
+            </div>
+            <% } %>
+            <button type="submit"><% if (editting) { %>Update<% } else { %>Add<% } %> </button>
+        </form>
+    </main>
+<%- include('../layout/includes/end.ejs') %>

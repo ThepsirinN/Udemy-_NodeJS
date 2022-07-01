@@ -1,0 +1,9 @@
+- dynamic route use ":params"
+- delete should appear before dynamic route
+- access params by using req.params.Param_name in the controller (relate to the name in route )
+- <%- include('url', {param(in):param(out)}) %>
+- add + before variable it will casting type to int
+- require.main.filename does not automatically create the file we need to create json file manaully. Otherwise, It'll generate amount of error
+- query is for ?param *** like get in PHP 
+- Delete with filter out 
+- if delete product. It will delete cart (On delete = CASSADE in python)
