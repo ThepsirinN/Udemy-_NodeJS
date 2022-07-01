@@ -1,0 +1,158 @@
+/* HTML AND BODY CSS */
+html, body{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Kanit', sans-serif;
+    font-size: 20px;
+    padding: 0 0 0 0;
+    margin: 0px 0px 0px 0px;
+    background-color: #CAE7DF;
+}
+/* Navigation    */
+.navigation-bar{
+    background-color: #3EB650;
+}
+
+.list-menu{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0px 0px 0px 0px;
+    margin: 1% 0px 1% 3%;
+}
+
+.menu-list{
+    margin: 0px 0px 0px 2%;
+}
+
+.menu-link {
+    text-decoration: none;
+    color: darkblue;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.menu-link:hover{
+    text-decoration: underline;
+    color: #CAE7DF;
+}
+
+.active{
+    text-decoration: solid;
+    color: #2A3166;
+    background-color: #CAE7DF;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.active:hover{
+    text-decoration: underline;
+    color: #2A3166;
+}
+
+/* body */
+.body-container{
+    margin: 1% 5% 0px 5%;
+}
+
+
+/* Home */
+.form-card{
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 5% 5% 10% 5%;
+    border-radius: 15px;
+}
+
+.form-card:hover{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
+.form-group>input[type=text], .form-group>button[type=submit]{
+    border-radius: 8px;
+    margin-top: 2%;
+    width: 40%;
+    padding: 15px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 20px;
+}
+
+.form-group>button[type=submit]{
+    background-color: #1e327d;
+    color:#CAE7DF;
+    width: 20%;
+}
+
+.form-group>span{
+    font-size: 20px;
+}
+
+/* User */
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;    
+}
+
+
+.user-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    background-color: white;
+    width: 30%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.user-card:hover{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+}
+
+.img_profile{
+    width: 20%;
+    border: 0px;
+    margin: 10% 0% 5% 0%;
+    padding: 0px;
+}
+
+.usern{
+    margin: 1% 0% 5% 0%;
+    padding: 0px;
+}
+
+.hr-user{
+    width: 40%;               
+    height: 0px;
+    border: solid #2A3166;
+}
+
+.hr-end{
+    width: 80%;               
+    height: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: solid #cbccd3;
+}
+
+/* footer */
+.footer-bottom {
+    margin: auto 0 0 0;
+    background-color: #2A3166;
+}
+
+.footer-text{
+    color: #FFFFFF;
+    padding: 5px 0px 5px 0px;
+}
