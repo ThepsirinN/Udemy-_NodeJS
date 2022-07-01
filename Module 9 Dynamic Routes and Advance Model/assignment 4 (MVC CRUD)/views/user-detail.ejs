@@ -1,0 +1,15 @@
+<%- include('layout/header.ejs') -%> 
+    <%if (data) { %>
+        <div class="card">
+            <div class="user-card">
+                <img src="<%= data.IMGURL %>" alt="User_image_profile" class="img_profile">
+                <hr class="hr-user">
+                <span class="usern">Username : <%= data.Username %> </span>
+                <span class="usern">Password : <%= data.Password %> </span>
+                <button class="user-detail-button" ><a class="user-detail-link" href="/users" target="blank">Back</a></button>
+            </div>
+        </div>
+    <%} else { %> 
+        <h3> No Profile Insert </h3>
+    <% } %> 
+<%- include('layout/footer.ejs') -%> 

@@ -6,6 +6,7 @@ const bodyparser = require('body-parser')
 
 const homeR = require('./routes/home')
 const userR = require('./routes/user')
+const adminR = require('./routes/admin')
 
 const errorController = require('./controllers/error')
 
@@ -18,7 +19,8 @@ app.use(express.static(path.join(__dirname,"public")))
 
 app.use(homeR.routes)
 app.use('/users',userR)
-
+app.use('/Admin',adminR.routes)
+ 
 app.use(errorController.get404Error)
 
 app.listen(4000,'localhost')

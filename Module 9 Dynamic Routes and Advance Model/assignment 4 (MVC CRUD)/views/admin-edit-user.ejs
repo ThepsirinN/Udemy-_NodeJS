@@ -1,0 +1,34 @@
+<%- include('layout/header.ejs') -%> 
+    <%if (data) { %>
+        <div class="card">
+            <div class="user-card">
+                <img src="<%= data.IMGURL %>" alt="User_image_profile" class="img_profile">
+                <hr class="hr-user">
+                    <span class="usern">User ID : <%= data.id %> </span>
+                    <span class="usern">Old Username : <%= data.Username %> </span>
+                    <span class="usern">Old Password : <%= data.Password %> </span>
+                <hr class="hr-user">
+                <span><u>Update Data</u></span>
+                <form action="./" method="post">
+                    <div class="form-group-edit">
+                        <span>New Username : </span>
+                        <input type="text" name="username" id="username_id" placeholder="Username" value="<%= data.Username %>">
+                    </div>
+                    <div class="form-group-edit">
+                        <span>New IMGURL : </span>
+                        <input type="text" name="imgUrl" id="IMGURL_id" placeholder="Imgurl" value="<%= data.IMGURL %>">
+                    </div>
+                    <div class="form-group-edit">
+                        <span>New Password : </span>
+                        <input type="password" name="password" id="password_id" placeholder="Password" value="<%= data.Password %>">
+                    </div>
+                    <button class="form-group-edit-button"  type="submit">Submit</button>
+                    <input type="hidden" name="userId" value="<%= data.id %>">
+                    <input type="hidden" name="EditM" value="<%= edit %>">
+                </form>
+            </div>
+        </div>
+    <%} else { %> 
+        <h3> No Profile Insert </h3>
+    <% } %> 
+<%- include('layout/footer.ejs') -%> 
