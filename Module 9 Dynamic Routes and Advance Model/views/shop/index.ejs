@@ -11,6 +11,7 @@
     <% if (prods.length > 0) { %>
         <% for (let i of prods) { %>
             <p> <%= i.title %>  <%= i.imgURL %> <%= i.price %> <%= i.description %>  </p>
+            <%- include("addToCartButton.ejs",{i:i}) %> 
         <% } %>
     <% }else{ %>
         <p> No Product! </p>

@@ -4,4 +4,17 @@
 </head>
 <body>
     <%- include('../layout/includes/navigation.ejs') %>
+
+    <main>
+        <h1>My Product</h1>
+        <p>List of all product...</p>
+    </main>
+    <center>
+        <p>TITLE : <%= prods.title %></p>
+        <p>URL : <%= prods.imgURL %></p> 
+        <p>PRICE : <%= prods.price %></p> 
+        <p>DESCRIPTION : <%= prods.description %> </p>
+        <%- include("addToCartButton.ejs",{i:prods}) %> 
+        <a href="/products">Back</a>
+    </center>
 <%- include('../layout/includes/end.ejs') %>

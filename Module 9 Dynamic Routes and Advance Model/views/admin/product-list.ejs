@@ -12,8 +12,11 @@
     <% if (prods.length > 0) { %>
         <% for (let i of prods) { %>
             <p> <%= i.title %>  <%= i.imgURL %> <%= i.price %> <%= i.description %> </p>
-            <a href="/admin/edit-product" class="btn">Edit</a>
-            <form action="/admin/delete-product" method="post">
+            <a href="/admin/edit-products/<%= i.id %>?edit=true" class="btn">Edit</a>
+            <form action="./delete-products" method="post">
+                <div class="form-control">
+                    <input type="hidden" name="id" id="id" value="<%= i.id %>">
+                </div>
                 <button class="btn" type="submit">Delete</button>
             </form>
             <hr>

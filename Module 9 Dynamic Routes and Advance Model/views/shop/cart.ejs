@@ -4,5 +4,21 @@
 </head>
 <body>
     <%- include('../layout/includes/navigation.ejs') %>
-    <h1>Nothing</h1>
+    <main>
+        <% if (cart.length > 0) { %>
+            <% cart.forEach(element => { %>
+                <p><%= element.productData.id %> <%= element.productData.title %> <%= element.productData.imgURL %> <%= element.productData.description %> <%= element.productData.price %> <%= element.qty %></p>
+                <form action="/delete-cart-item" method="post">
+                <div class="form-control">
+                    <input type="hidden" name="id" id="id" value="<%= element.productData.id %>">
+                </div>
+                <button class="btn" type="submit">Delete</button>
+            </form>
+            <% }) %>
+            <h1><%= totalP %> Baht</h1>
+        <% } else { %>
+            <h1>Nothing</h1>
+        <% } %>
+         
+    </main>
 <%- include('../layout/includes/end.ejs') %>

@@ -13,6 +13,13 @@ router.get('/products',AdminProductsController.getProductList)
 
 router.post('/add-products',AdminProductsController.postAddProduct)
 
+router.get('/edit-products/:productID',AdminProductsController.getEditProduct)
+
+router.post('/edit-products',AdminProductsController.postEditProduct)
+
+router.post('/delete-products',AdminProductsController.postDeleteProduct)
+
+
 /* module.exports = router */
 exports.routes = router
 // or module.exports = router // and change the admin file route
