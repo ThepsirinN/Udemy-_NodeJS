@@ -1,0 +1,21 @@
+<%- include('layout/header.ejs') -%> 
+    <%if (data.length > 0) { %>
+        <%for (let i in data) {%>
+        <div class="card">
+            <div class="user-card">
+                <img src="<%= data[i].IMGURL %>" alt="User_image_profile" class="img_profile">
+                <hr class="hr-user">
+                <span class="usern"><%= data[i].Username %> </span>
+                <button class="user-detail-button" ><a class="user-detail-link" href="users/view-detail/<%= data[i].id %>">More Detail</a></button>
+            </div>
+        </div>
+            <%if (data.length - i != 1){ %> 
+                <hr class="hr-end">
+            <% }else{ %> 
+                <p></p>
+            <% } %> 
+        <% } %> 
+    <%} else { %> 
+        <h3> No Profile Insert </h3>
+    <% } %> 
+<%- include('layout/footer.ejs') -%> 
