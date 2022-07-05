@@ -7,8 +7,12 @@ exports.getAddProduct = (req, res, next)=>{
 
 exports.getProductList = (req, res, next)=>{
     console.log('admin/product-list')
-    ProductModel.fetchAll((product)=>{
-        res.render('admin/product-list',{prods : product, docTitle : 'products', path : '/admin/products'})
+    ProductModel.fetchAll()
+    .then((result)=>{
+        res.render('admin/product-list',{prods : result.filter(index => index !== 'meta' ), docTitle : 'products', path : '/admin/products'})
+    })
+    .catch(err=>{
+        console.log(err)
     })
 }
 
@@ -42,6 +46,12 @@ exports.postEditProduct = (req, res, next) =>{
 exports.postAddProduct = (req, res, next)=>{
     const product = new ProductModel(null,req.body.title, req.body.IMGURL, req.body.description, req.body.price)
     product.save()
+    .then(()=>{
+        res.redirect('/')
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
     res.redirect('/')
 }
 

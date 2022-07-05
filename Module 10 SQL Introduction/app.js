@@ -15,6 +15,18 @@ const shopRoutes = require('./routes/shop')
 
 const errorController = require('./controllers/error')
 
+/* const db = require('./util/db') */
+/* db.getConnection() */
+// promise can use then and catch
+/* db.execute('select * from products')
+.then((result)=>{
+    console.log(result.filter(index => index !== 'meta'))    
+})
+.catch((err) =>{
+    console.log(err)
+}) */
+
+
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(express.static(path.join(__dirname,"public")))
 
@@ -25,3 +37,5 @@ app.use(shopRoutes)
 app.use(errorController.error404)
 
 app.listen("4000","localhost")
+// close connection
+// db.end()

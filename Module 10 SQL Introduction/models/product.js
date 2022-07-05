@@ -1,20 +1,8 @@
 const fs = require('fs')
-const path = require('path')
-const rootDir = require('../util/path')
 const Cart = require('./cart')
 
-//const products = []
-const p = path.join(rootDir, 'data', 'product.json')
-
-const getProductFromFile = (callback) =>{
-    fs.readFile(p,(err, fileContent)=>{
-        if(err){
-            callback([])
-        }
-        // return for display use json obj not str
-        callback(JSON.parse(fileContent))
-    })
-}
+// for mariaDB
+const db = require('../util/db')
 
 module.exports = class Product {
     constructor (id,title, imgURL, description, price){
@@ -25,7 +13,7 @@ module.exports = class Product {
         this.price = price 
     }
 
-    save(){
+    /* save(){
         getProductFromFile((products)=>{
             if(this.id){
                 // find product index
@@ -47,18 +35,52 @@ module.exports = class Product {
             }
             
         })
+    } */
+
+    save(){
+        if(this.id){
+
+        }
+        else{
+            return db.execute(`INSERT INTO products(title, price, imgURL, description) VALUES (?,?,?,?)`,
+            [this.title, this.price, this.imgURL, this.description]
+            )
+        }
     }
 
-    static fetchAll(callback){
-        getProductFromFile(callback)
+    static fetchAll(){
+        // if we decided to use promise in controller file
+        return db.execute('select * from products')
+        //if we decided to use promise in this file 
+        /* db.execute('select * from products')
+        // we can use array of row and fielddata
+        // in mariaDB IT will return 1 item not all item. Thus we should use filter at the end of this method
+        .then(([row,fieldData])=>{
+            console.log(row)
+            callback(row)
+        })
+        .catch((err)=>{
+            console.log(err)
+        }) 
+        */
+        // we can use result and filter
+        /* .then(result=>{
+            callback(result.filter(index => index !== 'meta'))
+        })
+        */
     }
 
-    static fetchById(id,callback){
+/*     static fetchById(id,callback){
         getProductFromFile((products =>{
             const product = products.find(p=> p.id === id)
             callback(product)
         }))
-    }
+    } */
+
+    static fetchById(id){
+        /* return db.execute(`select * from products where id=${id}`) */
+        return db.execute(`select * from products where id = ?`,[id])
+    } 
     
     static deleteByID(id){
         getProductFromFile((products =>{

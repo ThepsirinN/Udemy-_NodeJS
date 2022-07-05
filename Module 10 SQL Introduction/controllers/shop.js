@@ -2,8 +2,15 @@ const ProductModel = require('../models/product')
 const CartModel  = require('../models/cart')
 
 exports.getProduct = (req, res, next)=>{
-    ProductModel.fetchAll((products) => {
+    /* ProductModel.fetchAll((products) => {
         res.render('shop/product-list',{prods : products, docTitle: 'Product', path:'/products'}) 
+    }) */
+    ProductModel.fetchAll()
+    .then(result=>{
+        res.render('shop/product-list',{prods : result.filter(index => index !== 'meta'), docTitle: 'Product', path:'/products'}) 
+    })
+    .catch((err)=>{
+        console.log(err)
     })
 }
 
@@ -11,15 +18,33 @@ exports.getProductDetail = (req, res, next) =>{
     // from get
     const productID = req.params.productID
     console.log(productID)
-    ProductModel.fetchById(productID, (product)=>{
+    /* ProductModel.fetchById(productID, (product)=>{
         console.log(product)
         res.render('shop/product-detail',{prods : product, docTitle: `Product ID : ${productID}`, path:`/products`})
+    }) */
+    ProductModel.fetchById(productID)
+    .then((result)=>{
+        // index 0 because it is array with 1 element. It will not show in ejs template
+        res.render('shop/product-detail',{prods : result.filter(index => index !== 'meta')[0], docTitle: `Product ID : ${productID}`, path:`/products`})
     })
+    .catch((err)=>{
+        console.log(err)
+    })
+
 }
 
 exports.getIndex = (req, res, next)=>{
-    ProductModel.fetchAll((products) => {
+    // for the promise in model
+    /* ProductModel.fetchAll((products) => {
         res.render('shop/index',{prods : products, docTitle: 'Shop', path:'/'}) 
+    }) */
+    // promise in this file(controller)
+    ProductModel.fetchAll()
+    .then((result)=>{
+        res.render('shop/index',{prods : result.filter(index => index !== 'meta'), docTitle: 'Shop', path:'/'}) 
+    })
+    .catch((err)=>{
+        console.log(err)
     })
 }
 
