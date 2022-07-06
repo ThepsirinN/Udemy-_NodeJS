@@ -1,0 +1,27 @@
+<%- include('../layout/includes/head.ejs') %>
+<link rel="stylesheet" href="/css/form.css">
+
+</head>
+<body>
+    <%- include('../layout/includes/navigation.ejs') %>
+
+    <main>
+        <h1>My Product</h1>
+        <p>List of all product...</p>
+    </main>
+    <% if (prods.length > 0) { %>
+        <% for (let i of prods) { %>
+            <p> <%= i.title %>  <%= i.imgURL %> <%= i.price %> <%= i.description %> </p>
+            <a href="/admin/edit-products/<%= i.id %>?edit=true" class="btn">Edit</a>
+            <form action="./delete-products" method="post">
+                <div class="form-control">
+                    <input type="hidden" name="id" id="id" value="<%= i.id %>">
+                </div>
+                <button class="btn" type="submit">Delete</button>
+            </form>
+            <hr>
+        <% } %>
+    <% }else{ %>
+        <p> No Product! </p>
+    <% } %>
+<%- include('../layout/includes/end.ejs') %>
